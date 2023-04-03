@@ -1,67 +1,158 @@
 * {
-	text-decoration: none;
-	font-size: 1em;
-	outline: none;
-	padding: 0;
-	margin: 0;
+  text-decoration: none;
+  font-size: 1em;
+  outline: none;
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
-	}
-code, kbd, samp, pre, tt, var, textarea, 
-input, select, isindex, listing, xmp, plaintext {
-	white-space: normal;
-	font-size: 1em;
-	font: inherit;
-	}
-dfn, i, cite, var, address, em { 
-	font-style: normal; 
-	}
-th, b, strong, h1, h2, h3, h4, h5, h6 { 
-	font-weight: normal; 
-	}
-a, img, a img, iframe, form, fieldset, 
-abbr, acronym, object, applet, table {
-	border: none; 
-	}
+}
+code,
+kbd,
+samp,
+pre,
+tt,
+var,
+textarea,
+input,
+select,
+isindex,
+listing,
+xmp,
+plaintext {
+  white-space: normal;
+  font-size: 1em;
+  font: inherit;
+}
+dfn,
+i,
+cite,
+var,
+address,
+em {
+  font-style: normal;
+}
+th,
+b,
+strong,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+a,
+img,
+a img,
+iframe,
+form,
+fieldset,
+abbr,
+acronym,
+object,
+applet,
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
-	}
-caption, th, td, center { 
-	vertical-align: top;
-	text-align: left;
-	}
-body { 
-	background: white; 
-	line-height: 1; 
-	color: black; 
-	}
-q { 
-	quotes: "" ""; 
-	}
-ul, ol, dir, menu { 
-	list-style: none; 
-	}
-sub, sup { 
-	vertical-align: baseline; 
-	}
-a { 
-	color: inherit; 
-	}
-hr { 
-	display: none; 
-	}
-font { 
-	color: inherit !important; 
-	font: inherit !important; 
-	color: inherit !important; /* editor's note: necessary? */ 
-	}
+  border: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+caption,
+th,
+td,
+center {
+  vertical-align: top;
+  text-align: left;
+}
+body {
+  background: white;
+  line-height: 1;
+  color: black;
+}
+q {
+  quotes: '' '';
+}
+ul,
+ol,
+dir,
+menu {
+  list-style: none;
+}
+sub,
+sup {
+  vertical-align: baseline;
+}
+a {
+  color: inherit;
+}
+hr {
+  display: none;
+}
+font {
+  color: inherit !important;
+  font: inherit !important;
+  color: inherit !important; /* editor's note: necessary? */
+}
 marquee {
-	overflow: inherit !important;
-	-moz-binding: none;
-	}
-blink { 
-	text-decoration: none; 
-	}
-nobr { 
-	white-space: normal; 
-	}
+  overflow: inherit !important;
+  -moz-binding: none;
+}
+blink {
+  text-decoration: none;
+}
+nobr {
+  white-space: normal;
+}
+
+.w-md-editor-text-input,
+.w-md-editor-text-pre > code {
+  font-family: 'Roboto Mono' !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  font-size: 14px !important;
+  line-height: 24px !important;
+  color: #35393f !important;
+  padding: 16px;
+}
+
+.wmde-markdown {
+  font-family: 'Roboto Slab' !important;
+  font-style: normal !important;
+  h1 {
+    font-weight: 700 !important;
+    font-size: 32px !important;
+    line-height: 42px !important;
+  }
+
+  h2 {
+    font-weight: 300 !important;
+    font-size: 28px !important;
+    line-height: 37px !important;
+  }
+
+  h3 {
+    font-weight: 700 !important;
+    font-size: 24px !important;
+    line-height: 32px !important;
+  }
+
+  h4 {
+    font-weight: 700 !important;
+    font-size: 20px !important;
+    line-height: 26px !important;
+    color: #35393f !important;
+  }
+  h5 {
+    font-weight: 700 !important;
+    font-size: 16px !important;
+    line-height: 21px !important;
+  }
+  h6 {
+    font-weight: 700 !important;
+    font-size: 14px !important;
+    line-height: 18px !important;
+    color: #e46643 !important;
+  }
+}
