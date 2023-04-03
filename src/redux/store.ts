@@ -1,7 +1,11 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import filesReducer from './slices/filesSlice';
+import screenReducer from './slices/screenSlice';
 
-export const reducers = combineReducers({ files: filesReducer });
+export const reducers = combineReducers({
+  files: filesReducer,
+  screen: screenReducer,
+});
 
 export const store = configureStore({
   reducer: reducers,
