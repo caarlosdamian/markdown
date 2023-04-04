@@ -6,7 +6,6 @@ import './Preview.scss';
 export const Preview = () => {
   const state = useSelector((state) => state.files.files);
   const file = state[0].content;
-  console.log(file);
   return (
     <div>
       <MDEditor.Markdown source={file} />
