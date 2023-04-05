@@ -7,7 +7,7 @@ export const Preview = () => {
   const state = useSelector((state) => state.files.files);
   const file = state[0].content;
   return (
-    <div>
+    <div className='preview'>
       <MDEditor.Markdown source={file} />
     </div>
   );

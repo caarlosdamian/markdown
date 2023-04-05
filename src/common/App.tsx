@@ -7,7 +7,7 @@ export const App = () => {
   return (
     <main>
       <Header />
-      <Sidebar />
+      {/* <Sidebar /> */}
       <Main />
     </main>
   );
