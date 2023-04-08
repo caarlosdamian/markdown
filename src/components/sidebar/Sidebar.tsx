@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { iconDocument, iconLightMode, iconMenu, iconSave } from '../../assets';
+import { iconDarkMode, iconDocument, iconLightMode } from '../../assets';
 import { File } from '../../common/types';
 import { changeSelectedFile } from '../../redux/slices/filesSlice';
 import { AppDispatch, RootState } from '../../redux/store';
@@ -25,6 +25,7 @@ export const Sidebar = () => {
             <div
               className="information__file"
               onClick={() => dispatch(changeSelectedFile(file))}
+              key={file.content}
             >
               <img src={iconDocument} alt="iconDocument" />
               <div className="information__file--details">
@@ -35,7 +36,13 @@ export const Sidebar = () => {
           ))}
         </div>
       </div>
-      <div className="theme"></div>
+      <div className="theme">
+        <img src={iconLightMode} alt="iconLightMode" />
+        <div className="toggle__container">
+          <div className="toggle__container--circle"></div>
+        </div>
+        <img src={iconDarkMode} alt="iconDarkMode" />
+      </div>
     </div>
   );
 };

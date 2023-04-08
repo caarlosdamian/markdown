@@ -2,11 +2,13 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import filesReducer from './slices/filesSlice';
 import screenReducer from './slices/screenSlice';
 import sidebarReducer from './slices/sidebarSlice';
+import themeReducer from './slices/themeSlice';
 
 export const reducers = combineReducers({
   files: filesReducer,
   screen: screenReducer,
   sidebar: sidebarReducer,
+  theme: themeReducer,
 });
 
 export const store = configureStore({

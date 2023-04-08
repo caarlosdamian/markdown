@@ -1,6 +1,6 @@
 .sidebar {
   background: #1d1f22;
-  min-height: 100vh;
+  height: 100vh;
   width: 0;
   -webkit-transition: width 1s ease-in-out;
   -moz-transition: width 1s ease-in-out;
@@ -9,6 +9,10 @@
   &.show {
     min-width: 250px;
     padding: 28px 24px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
   }
   .information {
     display: flex;
@@ -72,6 +76,28 @@
             color: #ffffff;
           }
         }
+      }
+    }
+  }
+  .theme {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    // align-self: flex-end;
+    justify-self: flex-end;
+    .toggle__container {
+      background: #5a6069;
+      border-radius: 14.5px;
+      width: 48px;
+      height: 24px;
+      padding: 6px;
+
+      &--circle {
+        height: 12px;
+        width: 12px;
+        border-radius: 50%;
+        background: white;
       }
     }
   }
