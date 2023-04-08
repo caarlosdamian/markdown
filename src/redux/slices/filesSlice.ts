@@ -4,22 +4,29 @@ import { Files } from '../../common/data';
 import { File } from '../../common/types';
 
 export interface Filesstate {
-  selectedFile: File | {};
+  selectedFile: File;
   files: File[];
 }
 
 const initialState: Filesstate = {
-  selectedFile: {},
+  selectedFile: Files[0],
   files: Files,
 };
 
 export const filesSlice = createSlice({
   name: 'files',
   initialState,
-  reducers: {},
+  reducers: {
+    changeSelectedFile: (state, { payload }) => {
+      state.selectedFile = payload;
+    },
+    changeContent: (state, { payload }) => {
+      state.selectedFile.content = payload;
+    },
+  },
 });
 
 // Action creators are generated for each case reducer function
-export const {} = filesSlice.actions;
+export const { changeSelectedFile, changeContent } = filesSlice.actions;
 
 export default filesSlice.reducer;

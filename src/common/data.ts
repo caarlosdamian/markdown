@@ -8,6 +8,6 @@ export const Files = [
   {
     createdAt: '04-01-2022',
     name: 'untitled-document.md',
-    content: '',
+    content: 'Hola',
   },
 ];

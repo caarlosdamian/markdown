@@ -17,6 +17,14 @@
     flex-direction: column;
     gap: 24px;
     &__header {
+      font-family: 'Commissioner';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 15px;
+      line-height: 18px;
+      letter-spacing: 5px;
+      color: #ffffff;
+      margin-bottom: 4px;
     }
     &__controls {
       display: flex;
@@ -24,6 +32,16 @@
       justify-content: flex-start;
       gap: 24px;
       flex-direction: column;
+
+      &--title {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+        letter-spacing: 2px;
+        color: #7c8187;
+      }
 
       .information__file {
         display: flex;

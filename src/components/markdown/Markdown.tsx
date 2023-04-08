@@ -1,13 +1,22 @@
 import MDEditor from '@uiw/react-md-editor';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { changeContent } from '../../redux/slices/filesSlice';
+import { RootState } from '../../redux/store';
 import './Markdown.scss';
 
 export const Markdown = () => {
-  const state = useSelector((state) => state.files.files);
-  const file = state[0].content;
+  const {
+    selectedFile: { content },
+  } = useSelector((state: RootState) => state.files);
+  const dispatch = useDispatch();
   return (
     <div className="markdown">
-      <MDEditor preview="edit" value={file} height="100vh" />
+      <MDEditor
+        preview="edit"
+        value={content}
+        height="100vh"
+        onChange={(e) => dispatch(changeContent(e))}
+      />
     </div>
   );
 };
