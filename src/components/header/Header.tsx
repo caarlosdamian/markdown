@@ -9,6 +9,7 @@ import {
 } from '../../assets';
 import { toggleSidebar } from '../../redux/slices/sidebarSlice';
 import { AppDispatch, RootState } from '../../redux/store';
+import { Button } from '../button/Button';
 import './Header.scss';
 
 export const Header = () => {
@@ -31,7 +32,7 @@ export const Header = () => {
         <div className="header__info--controls">
           <img src={iconDelete} alt="iconDelete" />
           <div className="icon__wrapper">
-            <img src={iconSave} alt="iconSave" />
+            <Button label={<img src={iconSave} alt="iconSave" />} />
           </div>
         </div>
       </div>
