@@ -1,0 +1,13 @@
+.sidebar {
+  background: #1d1f22;
+  min-height: 100vh;
+  width: 0;
+  -webkit-transition: width 1s ease-in-out;
+  -moz-transition: width 1s ease-in-out;
+  -o-transition: width 1s ease-in-out;
+  transition: width 1s ease-in-out;
+  &.show {
+    min-width: 250px;
+    padding: 28px 24px;
+  }
+}

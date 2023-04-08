@@ -1,12 +1,27 @@
 import React from 'react';
-import { iconDelete, iconDocument, iconMenu, iconSave } from '../../assets';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  iconClose,
+  iconDelete,
+  iconDocument,
+  iconMenu,
+  iconSave,
+} from '../../assets';
+import { toggleSidebar } from '../../redux/slices/sidebarSlice';
+import { AppDispatch, RootState } from '../../redux/store';
 import './Header.scss';
 
 export const Header = () => {
+  const dispatch = useDispatch<AppDispatch>();
+  const { show } = useSelector((state: RootState) => state.sidebar);
   return (
     <header className="header">
       <div className="header__menu">
-        <img src={iconMenu} alt="iconMenu" />
+        <img
+          src={show ? iconClose : iconMenu}
+          alt="iconMenu"
+          onClick={() => dispatch(toggleSidebar())}
+        />
       </div>
       <div className="header__info">
         <div className="header__info--file">

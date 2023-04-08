@@ -6,9 +6,11 @@ import './App.scss';
 export const App = () => {
   return (
     <main>
-      <Header />
-      {/* <Sidebar /> */}
-      <Main />
+      <Sidebar />
+      <div className="main__content">
+        <Header />
+        <Main />
+      </div>
     </main>
   );
 };
