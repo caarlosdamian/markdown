@@ -14,7 +14,9 @@ export const Markdown = () => {
       <MDEditor
         preview="edit"
         value={content}
+        overflow={true}
         height="100vh"
+        hideToolbar={true}
         onChange={(e) => dispatch(changeContent(e))}
       />
     </div>

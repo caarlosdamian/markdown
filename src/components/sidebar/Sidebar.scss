@@ -1,11 +1,14 @@
 .sidebar {
   background: #1d1f22;
-  min-width: 100%;
+  width: 100vh;
+  min-height: 100vh;
+  max-height: 667px;
   width: 0;
   -webkit-transition: width 1s ease-in-out;
   -moz-transition: width 1s ease-in-out;
   -o-transition: width 1s ease-in-out;
   transition: width 1s ease-in-out;
+  display: none;
   &.show {
     min-width: 250px;
     padding: 28px 24px;
@@ -36,6 +39,8 @@
       justify-content: flex-start;
       gap: 24px;
       flex-direction: column;
+      max-height: 500px;
+      overflow: scroll;
 
       &--title {
         font-family: 'Roboto';
