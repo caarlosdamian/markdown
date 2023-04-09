@@ -84,7 +84,6 @@
     align-items: center;
     justify-content: flex-start;
     gap: 10px;
-    // align-self: flex-end;
     justify-self: flex-end;
     .toggle__container {
       background: #5a6069;
@@ -98,6 +97,11 @@
         width: 12px;
         border-radius: 50%;
         background: white;
+        transition: 0.5s all ease;
+
+        &.dark {
+          transform: translateX(200%);
+        }
       }
     }
   }

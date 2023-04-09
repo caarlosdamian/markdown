@@ -15,10 +15,13 @@ export const themeSlice = createSlice({
     toggleTheme: (state) => {
       state.dark = !state.dark;
     },
+    toggleThemeManual: (state, { payload }) => {
+      state.dark = payload;
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { toggleTheme } = themeSlice.actions;
+export const { toggleTheme, toggleThemeManual } = themeSlice.actions;
 
 export default themeSlice.reducer;
