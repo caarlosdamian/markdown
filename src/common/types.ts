@@ -1,5 +1,5 @@
 export interface File {
-  createdAt: string;
+  createdAt: any;
   name: string;
   content: string;
 }

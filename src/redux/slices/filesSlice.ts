@@ -23,10 +23,14 @@ export const filesSlice = createSlice({
     changeContent: (state, { payload }) => {
       state.selectedFile.content = payload;
     },
+    addFile: (state, { payload }) => {
+      state.files.push(payload)
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { changeSelectedFile, changeContent } = filesSlice.actions;
+export const { changeSelectedFile, changeContent, addFile } =
+  filesSlice.actions;
 
 export default filesSlice.reducer;

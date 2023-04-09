@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { iconDocument } from '../../assets';
 import { File } from '../../common/types';
-import { changeSelectedFile } from '../../redux/slices/filesSlice';
+import { addFile, changeSelectedFile } from '../../redux/slices/filesSlice';
 import { AppDispatch, RootState } from '../../redux/store';
 import { Button } from '../button/Button';
 import { toggleTheme } from '../../redux/slices/themeSlice';
@@ -21,7 +21,18 @@ export const Sidebar = () => {
         <div className="information__header">MARKDOWN</div>
         <div className="information__controls">
           <span className="information__controls--title">MY DOCUMENTS</span>
-          <Button label="+ New Document" />
+          <Button
+            label="+ New Document"
+            onClick={() =>
+              dispatch(
+                addFile({
+                  content: '',
+                  name: '',
+                  createdAt:new Date().toString(),
+                })
+              )
+            }
+          />
           {files.map((file: File) => (
             <div
               className="information__file"
