@@ -29,14 +29,22 @@ export const filesSlice = createSlice({
         id: Math.floor(Math.random() * Date.now()),
         name: `New Doc ${state.files.length + 1}`,
         content: `New Doc ${state.files.length + 1}`,
-        createdAt: moment().format('DD MMMM YYYY') ,
+        createdAt: moment().format('DD MMMM YYYY'),
+      });
+    },
+    saveFile: (state) => {
+      state.files = state.files.map((item) => {
+        if (item.id === state.selectedFile.id) {
+          return state.selectedFile;
+        }
+        return item;
       });
     },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { changeSelectedFile, changeContent, addFile } =
+export const { changeSelectedFile, changeContent, addFile, saveFile } =
   filesSlice.actions;
 
 export default filesSlice.reducer;
