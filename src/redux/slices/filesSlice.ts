@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { Files } from '../../common/data';
 import { File } from '../../common/types';
+import moment from 'moment';
 
 export interface Filesstate {
   selectedFile: File;
@@ -23,8 +24,13 @@ export const filesSlice = createSlice({
     changeContent: (state, { payload }) => {
       state.selectedFile.content = payload;
     },
-    addFile: (state, { payload }) => {
-      state.files.push(payload)
+    addFile: (state) => {
+      state.files.push({
+        id: Math.floor(Math.random() * Date.now()),
+        name: `New Doc ${state.files.length + 1}`,
+        content: `New Doc ${state.files.length + 1}`,
+        createdAt: moment().format('DD MMMM YYYY') ,
+      });
     },
   },
 });

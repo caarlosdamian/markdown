@@ -25,11 +25,7 @@ export const Sidebar = () => {
             label="+ New Document"
             onClick={() =>
               dispatch(
-                addFile({
-                  content: '',
-                  name: '',
-                  createdAt:new Date().toString(),
-                })
+                addFile()
               )
             }
           />
