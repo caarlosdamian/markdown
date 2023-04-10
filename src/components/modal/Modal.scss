@@ -8,6 +8,10 @@
   right: 0;
   left: 0;
   bottom: 0;
+
+  &.dark {
+    background: rgba(124, 129, 135, 0.5);
+  }
   .modal__container {
     position: absolute;
     top: 255px;
@@ -26,6 +30,17 @@
     flex-direction: column;
     gap: 16px;
 
+    &.dark {
+      background: #1d1f22;
+      &--title {
+        color: #ffffff;
+      }
+
+      &--description {
+        color: #c1c4cb;
+      }
+    }
+
     &--title {
       font-family: 'Roboto Slab';
       font-style: normal;
@@ -33,6 +48,9 @@
       font-size: 20px;
       line-height: 26px;
       color: #35393f;
+      &.dark {
+        color: #ffffff;
+      }
     }
 
     &--description {
@@ -42,6 +60,9 @@
       font-size: 14px;
       line-height: 24px;
       color: #7c8187;
+      &.dark {
+        color: #c1c4cb;
+      }
     }
   }
 }
