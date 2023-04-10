@@ -21,14 +21,7 @@ export const Sidebar = () => {
         <div className="information__header">MARKDOWN</div>
         <div className="information__controls">
           <span className="information__controls--title">MY DOCUMENTS</span>
-          <Button
-            label="+ New Document"
-            onClick={() =>
-              dispatch(
-                addFile()
-              )
-            }
-          />
+          <Button label="+ New Document" onClick={() => dispatch(addFile())} />
           {files.map((file: File) => (
             <div
               className="information__file"

@@ -79,6 +79,10 @@
             font-size: 15px;
             line-height: 18px;
             color: #ffffff;
+            cursor: pointer;
+            &:hover {
+              color: #e46643;
+            }
           }
         }
       }

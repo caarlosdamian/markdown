@@ -16,4 +16,13 @@
   &--img {
     cursor: pointer;
   }
+
+  svg{
+    cursor: pointer;
+    path{
+      &:hover{
+        fill: #e46643;
+      }
+    }
+  }
 }
