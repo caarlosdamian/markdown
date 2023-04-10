@@ -22,7 +22,7 @@ export const filesSlice = createSlice({
       state.selectedFile = payload;
     },
     changeContent: (state, { payload }) => {
-      state.selectedFile[payload.name]= payload.value;
+      state.selectedFile[payload.name] = payload.value;
     },
     addFile: (state) => {
       state.files.push({
@@ -40,11 +40,23 @@ export const filesSlice = createSlice({
         return item;
       });
     },
+    deleteFile: (state, { payload }) => {
+      state.files =
+        state.files.length === 1
+          ? Files
+          : state.files.filter((item) => item.id !== payload);
+      state.selectedFile = state.files[0];
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { changeSelectedFile, changeContent, addFile, saveFile } =
-  filesSlice.actions;
+export const {
+  changeSelectedFile,
+  changeContent,
+  addFile,
+  saveFile,
+  deleteFile,
+} = filesSlice.actions;
 
 export default filesSlice.reducer;

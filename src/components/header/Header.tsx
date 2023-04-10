@@ -13,7 +13,11 @@ import { Button } from '../button/Button';
 import './Header.scss';
 import { changeContent, saveFile } from '../../redux/slices/filesSlice';
 
-export const Header = () => {
+export const Header = ({
+  setShow,
+}: {
+  setShow: React.Dispatch<React.SetStateAction<boolean>>;
+}) => {
   const dispatch = useDispatch<AppDispatch>();
   const {
     sidebar: { show },
@@ -37,12 +41,18 @@ export const Header = () => {
               type="text"
               value={selectedFile.name}
               className="file__name--input"
-              onChange={(e) => dispatch(changeContent({ value: e.target.value, name: 'name' }))}
+              onChange={(e) =>
+                dispatch(changeContent({ value: e.target.value, name: 'name' }))
+              }
             />
           </div>
         </div>
         <div className="header__info--controls">
-          <img src={iconDelete} alt="iconDelete" />
+          <img
+            src={iconDelete}
+            alt="iconDelete"
+            onClick={() => setShow(true)}
+          />
           <div className="icon__wrapper">
             <Button
               label={
