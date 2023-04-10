@@ -22,7 +22,7 @@ export const filesSlice = createSlice({
       state.selectedFile = payload;
     },
     changeContent: (state, { payload }) => {
-      state.selectedFile.content = payload;
+      state.selectedFile[payload.name]= payload.value;
     },
     addFile: (state) => {
       state.files.push({

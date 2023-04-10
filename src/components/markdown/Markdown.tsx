@@ -17,7 +17,8 @@ export const Markdown = () => {
         overflow={true}
         height="100vh"
         hideToolbar={true}
-        onChange={(e) => dispatch(changeContent(e))}
+        name="testing"
+        onChange={(e) => dispatch(changeContent({ value: e, name: 'content' }))}
       />
     </div>
   );
