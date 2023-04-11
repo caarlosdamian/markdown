@@ -11,13 +11,19 @@ export const Modal = ({
   setShow: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
   const {
-    files: { selectedFile },theme:{dark}
+    files: { selectedFile },
+    theme: { dark },
   } = useSelector((state: RootState) => state);
   const dispatch = useDispatch();
   return (
-    <div className={`modal__overlay ${dark && 'dark'}`} onClick={() => setShow(false)}>
+    <div
+      className={`modal__overlay ${dark && 'dark'}`}
+      onClick={() => setShow(false)}
+    >
       <div className={`modal__container ${dark && 'dark'}`}>
-        <span className={`modal__container--title ${dark && 'dark'}`}>Delete this document?</span>
+        <span className={`modal__container--title ${dark && 'dark'}`}>
+          Delete this document?
+        </span>
         <span className={`modal__container--description ${dark && 'dark'}`}>
           Are you sure you want to delete the '{selectedFile.name}' document and
           its contents? This action cannot be reversed.
