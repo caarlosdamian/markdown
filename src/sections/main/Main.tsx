@@ -6,10 +6,16 @@ import './Main.scss';
 
 export const Main = () => {
   const { viewPort } = useWindowInfo();
-  const { hide } = useSelector((state: RootState) => state.screen);
+  const {
+    screen: { hide },
+    theme: { dark },
+  } = useSelector((state: RootState) => state);
 
   return (
-    <div className="main" data-color-mode="light">
+    <div
+      className={`main ${dark ? 'dark' : ''} `}
+      data-color-mode={`${dark ? 'dark' : 'light'}`}
+    >
       {viewPort === 'desktop' ? (
         <div className="main__content">
           {hide && (

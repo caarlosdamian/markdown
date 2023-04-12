@@ -1,17 +1,16 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { iconHidePreview, iconShowPreview } from '../../assets';
 import { useWindowInfo } from '../../hooks/useWindowInfo';
 import { toggleScreen } from '../../redux/slices/screenSlice';
 import { AppDispatch, RootState } from '../../redux/store';
 import './MarkdownHeader.scss';
 
 export const MarkdownHeader = ({ label }: { label: string }) => {
-  const { hide } = useSelector((state: RootState) => state.screen);
+  const { screen:{hide},theme:{dark} } = useSelector((state: RootState) => state);
   const dispatch = useDispatch<AppDispatch>();
-  const { screenSize, viewPort } = useWindowInfo();
+  const { viewPort } = useWindowInfo();
   return (
-    <div className="markdown__header">
+    <div className={`markdown__header ${dark && 'dark'}`}>
       <span className="markdown__header--title">{label}</span>
 
       {viewPort === 'desktop' && label === 'MARKDOWN' ? (
@@ -41,11 +40,6 @@ export const MarkdownHeader = ({ label }: { label: string }) => {
           />
         </svg>
       )
-      // <img
-      //   className="markdown__header--img"
-      //   src={hide ? iconShowPreview : iconHidePreview}
-      //   onClick={() => dispatch(toggleScreen())}
-      // />
       }
     </div>
   );

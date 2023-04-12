@@ -4,6 +4,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  &.dark{
+    background: #1D1F22;
+  }
   &--title {
     font-family: 'Roboto';
     font-style: normal;
