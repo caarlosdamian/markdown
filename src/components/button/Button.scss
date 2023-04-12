@@ -16,7 +16,15 @@
   justify-content: center;
   cursor: pointer;
 
-  &:hover{
-    background: #F39765;
+  &:hover {
+    background: #f39765;
   }
+}
+
+.btn-save {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 8px;
 }

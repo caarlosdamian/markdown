@@ -6,10 +6,11 @@ import './Preview.scss';
 
 export const Preview = () => {
   const {
-    selectedFile: { content },
-  } = useSelector((state: RootState) => state.files);
+    files:{selectedFile: { content }},
+    theme: { dark },
+  } = useSelector((state: RootState) => state);
   return (
-    <div className="preview">
+    <div className={`preview ${dark && 'dark'}`}>
       <MDEditor.Markdown source={content} />
     </div>
   );

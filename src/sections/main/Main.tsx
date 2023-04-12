@@ -17,7 +17,7 @@ export const Main = () => {
       data-color-mode={`${dark ? 'dark' : 'light'}`}
     >
       {viewPort === 'desktop' ? (
-        <div className="main__content">
+        <div className="main__content_markdown">
           {hide && (
             <div className="main__markdown">
               <MarkdownHeader label="MARKDOWN" />
@@ -30,7 +30,7 @@ export const Main = () => {
           </div>
         </div>
       ) : (
-        <div className="main__content">
+        <div className="main__content_markdown">
           {hide ? (
             <div className="main__markdown">
               <MarkdownHeader label="MARKDOWN" />

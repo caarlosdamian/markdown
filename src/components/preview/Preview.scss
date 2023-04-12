@@ -1,4 +1,7 @@
 .preview{
     padding: 16px 20px;
     position: relative;
+    &.dark{
+        background: #0E1117;
+    }
 }

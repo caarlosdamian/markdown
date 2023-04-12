@@ -1,4 +1,15 @@
+@import '../../common/Tokens.scss';
+
 .main {
   display: flex;
   flex-direction: column;
+  @include for-size('tablet-portrait-up'){
+    flex-direction: row;
+  }
+}
+
+
+
+.main__content_markdown{
+  display: flex;
 }

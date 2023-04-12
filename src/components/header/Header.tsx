@@ -10,8 +10,9 @@ import {
 import { toggleSidebar } from '../../redux/slices/sidebarSlice';
 import { AppDispatch, RootState } from '../../redux/store';
 import { Button } from '../button/Button';
-import './Header.scss';
 import { changeContent, saveFile } from '../../redux/slices/filesSlice';
+import { useWindowInfo } from '../../hooks/useWindowInfo';
+import './Header.scss';
 
 export const Header = ({
   setShow,
@@ -19,6 +20,7 @@ export const Header = ({
   setShow: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
   const dispatch = useDispatch<AppDispatch>();
+  const { viewPort } = useWindowInfo();
   const {
     sidebar: { show },
     files: { selectedFile },
@@ -61,12 +63,16 @@ export const Header = ({
           </svg>
           <div className="icon__wrapper">
             <Button
+              onClick={() => dispatch(saveFile())}
               label={
-                <img
-                  src={iconSave}
-                  alt="iconSave"
-                  onClick={() => dispatch(saveFile())}
-                />
+                viewPort === 'desktop' ? (
+                  <div className="btn-save">
+                    <img src={iconSave} alt="iconSave" />
+                    <span>Save Changes</span>
+                  </div>
+                ) : (
+                  <img src={iconSave} alt="iconSave" />
+                )
               }
             />
           </div>
