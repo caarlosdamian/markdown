@@ -5,7 +5,7 @@ export interface ThemeState {
 }
 
 const initialState: ThemeState = {
-  dark: false,
+  dark: window.matchMedia('(prefers-color-scheme: dark)').matches,
 };
 
 export const themeSlice = createSlice({
